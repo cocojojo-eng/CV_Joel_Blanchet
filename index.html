@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Joël Blanchet – CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Rokkitt:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #e0902f;
+    --page: #f1f1f1;
+    --header: #e8e8e8;
+    --text: #444;
+    --heading: #333;
+    --line: #dcdcdc;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 24px 12px;
+    background: #1c1c1c;
+    font-family: "Lato", Arial, sans-serif;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .cv {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--page);
+    border: 1px solid #000;
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 22px 28px;
+    background: var(--header);
+    border-bottom: 2px solid var(--accent);
+  }
+  .name-block { flex: 1; }
+  .name-block h1 {
+    margin: 0;
+    font-family: "Rokkitt", Georgia, serif;
+    font-weight: 700;
+    font-size: 34px;
+    letter-spacing: .5px;
+    color: #222;
+    line-height: 1.1;
+  }
+  .name-block h2 {
+    margin: 2px 0 0;
+    font-family: "Rokkitt", Georgia, serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: #555;
+  }
+  .contact {
+    font-size: 12px;
+    line-height: 1.55;
+    text-align: left;
+    color: #444;
+  }
+  .contact a { color: inherit; text-decoration: none; }
+
+  /* ---------- Sections ---------- */
+  section {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    gap: 18px;
+    margin: 0 28px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  section:last-of-type { border-bottom: none; }
+  section > h3 {
+    margin: 0;
+    font-family: "Rokkitt", Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--accent);
+  }
+
+  .entry + .entry { margin-top: 18px; }
+  .entry h4 {
+    margin: 0;
+    font-family: "Rokkitt", Georgia, serif;
+    font-weight: 400;
+    font-size: 19px;
+    color: var(--heading);
+    line-height: 1.25;
+  }
+  .entry .meta {
+    font-size: 11px;
+    font-style: italic;
+    color: #666;
+    margin: 1px 0 3px;
+  }
+  .entry p { margin: 0; text-align: left; }
+  p.profile { margin: 0; }
+
+  .skills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .lang-list, .hobbies { list-style: none; margin: 0; padding: 0; }
+  .lang-list li, .hobbies li { margin-bottom: 4px; }
+  .hobbies strong { color: var(--heading); }
+  .hobbies .years { font-size: 12px; color: #777; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 640px) {
+    header { flex-wrap: wrap; }
+    section { grid-template-columns: 1fr; gap: 6px; }
+    .skills { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ---------- Print ---------- */
+  @page { size: A4; margin: 0; }
+  @media print {
+    body { background: none; padding: 0; font-size: 12.5px; }
+    .cv { border: none; max-width: none; }
+    header, section { break-inside: avoid; }
+    .entry { break-inside: avoid; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<main class="cv">
+
+  <header>
+    <div class="name-block">
+      <h1>Joël Blanchet</h1>
+      <h2>Engineering student</h2>
+    </div>
+
+    <div class="contact">
+      e: <a href="mailto:joel.blanchet@ecam.fr">joel.blanchet@ecam.fr</a><br>
+      m: 06 45 67 20 70<br>
+      a: 90 rue du commerce, 01170 Gex, France
+    </div>
+  </header>
+
+  <section>
+    <h3>Personal Profile</h3>
+    <div>
+      <p class="profile">
+        Fourth year engineering student at ECAM LaSalle Lyon, specializing in the field of Energy,
+        I am interested in joining the EPFL E3 research program this summer.
+        I am currently enrolled in an international Mechanical and Electrical Engineering program, fully taught in English,
+        leading to a double degree. I would like to apply and develop the technical skills acquired during my studies to a research Lab.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h3>Work Experience</h3>
+    <div>
+      <div class="entry">
+        <h4>Intern, Energy Department, city of Vienne</h4>
+        <div class="meta">Summer 2026</div>
+        <p>
+          During my internship in the Energy Department of the City of Vienne, I set-up a Heating, Ventilation and Air-Conditioning (HVAC) inventory on a
+          Grist relational database, improved with custom HTML/JavaScript user-friendly interface for data entry and reporting. It allowed to
+          centralize and secure the tracking of HVAC equipment across 80 public buildings, in order to facilitate maintenance planning and decisions on energy renovation.
+        </p>
+      </div>
+
+      <div class="entry">
+        <h4>Project Manager at French Embassy in Thailand</h4>
+        <div class="meta">August – November 2025 · Academic project</div>
+        <p>
+          During a semester of studies in Thailand, I led an academic project for the French Embassy in
+          Thailand, combining technological innovation and cultural promotion of France and Thailand during the famous light festival in November. 
+        </p>
+      </div>
+
+      <div class="entry">
+        <h4>Operator Intern at Arbio SA, Versoix (Switzerland)</h4>
+        <div class="meta">July 2024</div>
+        <p>
+          Insulated a four-story building using natural, eco-friendly materials (lime and hemp). This internship
+          gave me insights into working conditions of a construction site.
+        </p>
+      </div>
+
+      <div class="entry">
+        <h4>Intern at Medair, Ecublens (Switzerland)</h4>
+        <div class="meta">March 2020</div>
+        <p>
+          Medair, an emergency relief NGO, provides humanitarian assistance to people affected by conflicts and natural
+          disasters. I worked in the marketing department, where I gained some basic understanding of fundraising and how charitable
+          organizations operate.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Technical Skills</h3>
+    <ul class="skills">
+      <li>Ansys</li>
+      <li>CAD (Creo Parametric / SolidWorks)</li>
+      <li>MS Office 365</li>
+      <li>Arduino</li>
+      <li>Python / JavaScript</li>
+      <li>Matlab</li>
+      <li>HTML / CSS</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Education</h3>
+    <div>
+      <div class="entry">
+        <h4>ECAM LaSalle, Lyon</h4>
+        <div class="meta">Engineering degree · 2023 – 2028</div>
+        <p>International engineering program taught entirely in English, leading to a double degree with a partner university abroad. Completed 3rd year with Highest Honors.</p>
+      </div>
+      <div class="entry">
+        <h4>French Baccalauréat with honors</h4>
+        <div class="meta">2020 – 2023</div>
+        <p>Scientific Baccalauréat with specializations in Mathematics, Physics-Chemistry, and Computer Science (NSI).</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Languages</h3>
+    <ul class="lang-list">
+      <li><strong>English</strong> – C1 (IELTS certificate)</li>
+      <li><strong>French</strong> – Mother tongue</li>
+      <li><strong>Spanish</strong> – Basic knowledge</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Hobbies</h3>
+    <ul class="hobbies">
+      <li><strong>Basketball</strong> <span class="years">2023 – 2026</span><br>ECAM LaSalle Basketball club</li>
+      <li><strong>Track and field</strong> <span class="years">2010 – 2023</span><br>AEA, track and field club, 2 selections to the French National Championships</li>
+      <li><strong>Student association – ECAM LaSalle</strong><br>Responsible of welcoming international students of the engineering program and of their cultural integration.</li>
+    </ul>
+  </section>
+
+</main>
+</body>
+</html>
